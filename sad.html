@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oh no 😢</title>
+  <style>
+    body {
+      background-color: #a0c4ff; /* sad, gloomy blue */
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding-top: 80px;
+      overflow: hidden;
+      position: relative;
+    }
+    .dog {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff6f91;
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    /* Raindrops */
+    .rain {
+      position: absolute;
+      width: 2px;
+      height: 15px;
+      background: #0a2f5b;
+      animation: fall linear infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes fall {
+      0% { top: -20px; opacity: 0.5; }
+      100% { top: 100%; opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="dog">🐶💧</div>
+
+<h2>Doggo is crying... Please try again 🥺</h2>
+
+<button onclick="location.href='index.html'">Try Again 🔁</button>
+
+<!-- Generate 50 raindrops -->
+<script>
+  for (let i = 0; i < 50; i++) {
+    let rain = document.createElement('div');
+    rain.className = 'rain';
+    rain.style.left = Math.random() * window.innerWidth + 'px';
+    rain.style.animationDuration = 0.5 + Math.random() * 1.5 + 's';
+    rain.style.animationDelay = Math.random() * 2 + 's';
+    document.body.appendChild(rain);
+  }
+</script>
+
+</body>
+</html>
