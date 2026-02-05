@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YAYYYY 💕</title>
+  <style>
+    body {
+      background-color: #fff3b0; /* bright, happy yellow */
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding-top: 80px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .dog {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 55px;
+      color: #2e8b57;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      color: #333;
+    }
+
+    /* Confetti pieces */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      opacity: 0.8;
+      pointer-events: none;
+      transform: rotate(0deg);
+      border-radius: 50%;
+      animation: confetti-fall linear infinite;
+    }
+
+    @keyframes confetti-fall {
+      0% { transform: translateY(0) rotate(0deg); opacity:1; }
+      100% { transform: translateY(800px) rotate(360deg); opacity:0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="dog">🐶🎉</div>
+
+<h1>YAYYYY 💕</h1>
+<p>Your buddhu is the happiest now 😁💖</p>
+
+<!-- Generate 50 confetti pieces -->
+<script>
+  const colors = ['#ff6f91','#ffb347','#8fd3f4','#c4f0c5','#ffdfba'];
+  for (let i = 0; i < 50; i++) {
+    let confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    confetti.style.left = Math.random() * window.innerWidth + 'px';
+    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.animationDuration = 2 + Math.random() * 2 + 's';
+    confetti.style.animationDelay = Math.random() * 2 + 's';
+    document.body.appendChild(confetti);
+  }
+</script>
+
+</body>
+</html>
